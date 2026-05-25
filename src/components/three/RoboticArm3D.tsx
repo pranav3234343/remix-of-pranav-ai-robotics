@@ -119,35 +119,49 @@ function FloatingRings() {
 }
 
 export function RoboticArm3D({ className }: { className?: string }) {
+  const wrapRef = useRef<HTMLDivElement>(null);
   const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
-  if (!mounted) {
-    return (
-      <div className={className} aria-hidden>
-        <div className="absolute inset-0 grid place-items-center pointer-events-none">
+
+  useEffect(() => {
+    const el = wrapRef.current;
+    if (!el) return;
+    // Defer mount until visible AND browser is idle, to avoid blocking initial paint
+    const io = new IntersectionObserver((entries) => {
+      if (entries.some((e) => e.isIntersecting)) {
+        const w = window as Window & { requestIdleCallback?: (cb: () => void, opts?: { timeout: number }) => number };
+        const schedule = w.requestIdleCallback ?? ((cb: () => void) => setTimeout(cb, 200));
+        schedule(() => setMounted(true), { timeout: 1500 });
+        io.disconnect();
+      }
+    }, { rootMargin: "200px" });
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  return (
+    <div ref={wrapRef} className={className} style={{ pointerEvents: "none" }} aria-hidden>
+      {!mounted ? (
+        <div className="absolute inset-0 grid place-items-center">
           <div className="size-12 rounded-full border-2 border-[var(--gold)]/30 border-t-[var(--gold)] animate-spin" />
         </div>
-      </div>
-    );
-  }
-  return (
-    <div className={className} style={{ pointerEvents: "none" }} aria-hidden>
-      <Canvas
-        camera={{ position: [3.5, 1.5, 5.5], fov: 38 }}
-        dpr={[1, 1.75]}
-        gl={{ antialias: true, alpha: true, premultipliedAlpha: false }}
-        style={{ background: "transparent" }}
-      >
-        <ambientLight intensity={0.45} />
-        <directionalLight position={[5, 6, 4]} intensity={1.3} color="#f4d27a" />
-        <directionalLight position={[-4, 3, -3]} intensity={0.7} color="#d4af37" />
-        <pointLight position={[0, 2, 4]} intensity={0.8} color="#b8862a" />
-        <Environment preset="warehouse" />
-        <Float speed={1.2} rotationIntensity={0.15} floatIntensity={0.4}>
-          <ArmRig />
-        </Float>
-        <FloatingRings />
-      </Canvas>
+      ) : (
+        <Canvas
+          camera={{ position: [3.5, 1.5, 5.5], fov: 38 }}
+          dpr={[1, 1.5]}
+          gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
+          frameloop="always"
+          style={{ background: "transparent" }}
+        >
+          <ambientLight intensity={0.6} />
+          <directionalLight position={[5, 6, 4]} intensity={1.4} color="#f4d27a" />
+          <directionalLight position={[-4, 3, -3]} intensity={0.8} color="#d4af37" />
+          <pointLight position={[0, 2, 4]} intensity={1} color="#b8862a" />
+          <Float speed={1.2} rotationIntensity={0.15} floatIntensity={0.4}>
+            <ArmRig />
+          </Float>
+          <FloatingRings />
+        </Canvas>
+      )}
     </div>
   );
 }
