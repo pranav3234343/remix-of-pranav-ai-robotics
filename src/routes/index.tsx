@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useEffect, useRef, useState } from "react";
+import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import heroImage from "@/assets/hero-arm-gold.jpg";
 import orRoom from "@/assets/or-suite-gold.jpg";
 import patientOutcomes from "@/assets/patient-outcomes.jpg";
@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { LogoWatermark } from "@/components/site/LogoWatermark";
-import { RoboticArm3D } from "@/components/three/RoboticArm3D";
+const RoboticArm3D = lazy(() => import("@/components/three/RoboticArm3D").then(m => ({ default: m.RoboticArm3D })));
 
 export const Route = createFileRoute("/")({
   head: () => ({
