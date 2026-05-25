@@ -93,8 +93,8 @@ export function SiteFooter() {
             </div>
             <div className="flex items-center gap-3">
               <Mail className="size-4 text-gold shrink-0" />
-              <a href="mailto:contact@pranavmercantile.cloud" className="hover:text-gold transition-colors">
-                contact@pranavmercantile.cloud
+              <a href="mailto:contact@pranavmercantile.co.in" className="hover:text-gold transition-colors">
+                contact@pranavmercantile.co.in
               </a>
             </div>
             <div className="flex items-center gap-3">
@@ -154,7 +154,7 @@ export function SiteFooter() {
       <div className="relative border-t border-[var(--gold)]/15">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 py-6 flex flex-wrap items-center justify-between gap-3 text-xs text-white/55">
           <div className="flex items-center gap-2">
-            <Activity className="size-3 text-gold" /> © {new Date().getFullYear()} Pranav Mercantile Private Limited. All rights reserved.
+            <Activity className="size-3 text-gold" /> © 2024 Pranav Mercantile Private Limited. All rights reserved.
           </div>
           <div className="text-gold/80">Anantapur · Andhra Pradesh · India</div>
         </div>

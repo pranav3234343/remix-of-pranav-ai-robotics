@@ -35,7 +35,7 @@ function TermsPage() {
             { h: "4. Intellectual Property", p: "All software, models, designs, and brand assets are the property of Pranav Mercantile Private Limited and protected by applicable IP law." },
             { h: "5. Limitation of Liability", p: "To the maximum extent permitted by law, Pranav Mercantile is not liable for indirect, incidental, or consequential damages arising from platform use." },
             { h: "6. Governing Law", p: "These terms are governed by the laws of India, with exclusive jurisdiction of the courts of Anantapur, Andhra Pradesh." },
-            { h: "7. Contact", p: "Questions? Email contact@pranavmercantile.cloud or call +91 9712131662." },
+            { h: "7. Contact", p: "Questions? Email contact@pranavmercantile.co.in or call +91 9712131662." },
           ].map((s) => (
             <div key={s.h}>
               <h2 className="font-display text-2xl font-semibold tracking-tight text-foreground">{s.h}</h2>
