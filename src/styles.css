@@ -192,3 +192,35 @@
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .story-link:hover::after { transform: scaleX(1); transform-origin: left; }
+
+/* Glassmorphism */
+@utility glass-panel {
+  background: color-mix(in oklab, white 8%, transparent);
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  border: 1px solid color-mix(in oklab, white 18%, transparent);
+  box-shadow: 0 30px 80px -20px oklch(0.1 0.05 250 / 0.6), inset 0 1px 0 oklch(1 0 0 / 0.12);
+}
+@utility glass-card {
+  background: color-mix(in oklab, white 6%, transparent);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border: 1px solid color-mix(in oklab, white 14%, transparent);
+}
+
+/* Count-up reveal */
+@keyframes count-up { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+@utility animate-count-up { animation: count-up 1s ease-out both; }
+
+/* Slow drift */
+@keyframes drift {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-10px) translateX(6px); }
+}
+@utility animate-drift { animation: drift 9s ease-in-out infinite; }
+
+/* Hover zoom for images */
+.zoom-reveal { overflow: hidden; }
+.zoom-reveal img { transition: transform 0.9s cubic-bezier(0.16,1,0.3,1), filter 0.6s ease; }
+.zoom-reveal:hover img { transform: scale(1.08); filter: saturate(1.15) brightness(1.05); }
+

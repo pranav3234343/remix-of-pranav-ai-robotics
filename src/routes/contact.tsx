@@ -109,7 +109,7 @@ function Field({ label, children }: { label: string; children: React.ReactNode }
   );
 }
 
-function ContactItem({ icon: Icon, title, children }: { icon: React.ElementType; title: string; children: React.ReactNode }) {
+function ContactItem({ icon: Icon, title, children }: { icon: React.ComponentType<{ className?: string }>; title: string; children: React.ReactNode }) {
   return (
     <div className="flex items-start gap-4">
       <div className="size-11 rounded-md bg-gradient-chrome grid place-items-center shrink-0 shadow-card">

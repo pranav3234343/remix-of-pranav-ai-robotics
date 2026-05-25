@@ -150,7 +150,7 @@ export function SiteFooter() {
           <div className="flex items-center gap-2">
             <Activity className="size-3" /> © {new Date().getFullYear()} Pranav Mercantile Private Limited. All rights reserved.
           </div>
-          <div>CIN available on request · ISO-aligned quality systems</div>
+          <div>Anantapur · Andhra Pradesh · India</div>
         </div>
       </div>
     </footer>
