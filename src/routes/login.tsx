@@ -141,7 +141,7 @@ function LoginPage() {
       </div>
 
       <div className="relative z-10 text-xs text-primary-foreground/50 text-center pb-6">
-        © {new Date().getFullYear()} Pranav Mercantile Private Limited
+        © 2024 Pranav Mercantile Private Limited
       </div>
     </div>
   );
