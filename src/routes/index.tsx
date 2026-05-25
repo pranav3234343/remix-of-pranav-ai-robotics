@@ -82,8 +82,13 @@ function IndexPage() {
               { icon: Crosshair, title: "Precision", desc: "Sub-millimeter accuracy across a 7-DOF articulated workspace." },
               { icon: ShieldCheck, title: "Safety", desc: "Triple-redundant control with live collision avoidance." },
               { icon: BrainCircuit, title: "AI Integration", desc: "Onboard models guide surgeons with real-time intelligence." },
-            ].map((f) => (
-              <div key={f.title} className="bg-card border border-border rounded-2xl p-8 shadow-card hover:shadow-elegant transition-shadow">
+            ].map((f, i) => (
+              <div
+                key={f.title}
+                data-reveal
+                data-reveal-delay={i + 1}
+                className="bg-card border border-border rounded-2xl p-8 shadow-card hover:shadow-elegant hover:-translate-y-1 transition-all duration-300"
+              >
                 <div className="size-12 rounded-lg bg-gradient-primary grid place-items-center shadow-elegant">
                   <f.icon className="size-5 text-primary-foreground" />
                 </div>
