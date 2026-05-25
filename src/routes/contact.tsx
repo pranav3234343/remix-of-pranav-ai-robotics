@@ -48,8 +48,8 @@ function ContactPage() {
                 D No 1-1478, Rudrampeta,<br />
                 Anantapur, Andhra Pradesh 515004, India
               </ContactItem>
-              <ContactItem icon={Mail} title="Email">contact@pranavmercantile.com</ContactItem>
-              <ContactItem icon={Phone} title="Phone">+91 — Available on request</ContactItem>
+              <ContactItem icon={Mail} title="Email"><a href="mailto:contact@pranavmercantile.cloud" className="hover:text-foreground">contact@pranavmercantile.cloud</a></ContactItem>
+              <ContactItem icon={Phone} title="Phone"><a href="tel:+919712131662" className="hover:text-foreground">+91 97121 31662</a></ContactItem>
             </div>
 
             <div className="mt-10 rounded-2xl overflow-hidden border border-border shadow-card aspect-[4/3]">

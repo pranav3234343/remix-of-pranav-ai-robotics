@@ -93,13 +93,13 @@ export function SiteFooter() {
             </div>
             <div className="flex items-center gap-3">
               <Mail className="size-4 text-gold shrink-0" />
-              <a href="mailto:contact@pranavmercantile.com" className="hover:text-gold transition-colors">
-                contact@pranavmercantile.com
+              <a href="mailto:contact@pranavmercantile.cloud" className="hover:text-gold transition-colors">
+                contact@pranavmercantile.cloud
               </a>
             </div>
             <div className="flex items-center gap-3">
               <Phone className="size-4 text-gold shrink-0" />
-              <span>+91 — Available on request</span>
+              <a href="tel:+919712131662" className="hover:text-gold transition-colors">+91 97121 31662</a>
             </div>
           </div>
 
@@ -145,8 +145,8 @@ export function SiteFooter() {
           </div>
           <div className="mt-6 text-xs uppercase tracking-[0.25em] text-gold font-medium">Legal</div>
           <ul className="mt-3 space-y-2 text-sm">
-            <li><span className="text-white/55">Privacy Policy</span></li>
-            <li><span className="text-white/55">Terms of Use</span></li>
+            <li><Link to="/privacy" className="story-link hover:text-gold">Privacy Policy</Link></li>
+            <li><Link to="/terms" className="story-link hover:text-gold">Terms of Service</Link></li>
           </ul>
         </div>
       </div>
