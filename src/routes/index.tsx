@@ -349,15 +349,9 @@ function IndexPage() {
 
       {/* 5 · GLOBAL IMPACT — counters + video background */}
       <section className="relative py-32 overflow-hidden bg-gradient-deep text-primary-foreground">
-        <video
-          autoPlay muted loop playsInline
-          poster={techDetail}
-          className="absolute inset-0 size-full object-cover opacity-25"
-        >
-          <source src="https://cdn.coverr.co/videos/coverr-medical-data-visualization-7411/1080p.mp4" type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-background/0 to-black/60" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_50%,oklch(0.52_0.18_250/0.35),transparent_60%)]" />
+        <img src={patientOutcomes} alt="" loading="lazy" className="absolute inset-0 size-full object-cover opacity-25" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_50%,rgba(212,175,55,0.25),transparent_60%)]" />
 
         <div className="relative max-w-7xl mx-auto px-6 lg:px-10">
           <div className="max-w-3xl" data-reveal>
