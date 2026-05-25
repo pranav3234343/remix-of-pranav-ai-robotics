@@ -121,19 +121,28 @@ function FloatingRings() {
 export function RoboticArm3D({ className }: { className?: string }) {
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
-  if (!mounted) return <div className={className} />;
+  if (!mounted) {
+    return (
+      <div className={className} aria-hidden>
+        <div className="absolute inset-0 grid place-items-center pointer-events-none">
+          <div className="size-12 rounded-full border-2 border-[var(--gold)]/30 border-t-[var(--gold)] animate-spin" />
+        </div>
+      </div>
+    );
+  }
   return (
-    <div className={className}>
+    <div className={className} style={{ pointerEvents: "none" }} aria-hidden>
       <Canvas
         camera={{ position: [3.5, 1.5, 5.5], fov: 38 }}
         dpr={[1, 1.75]}
-        gl={{ antialias: true, alpha: true }}
+        gl={{ antialias: true, alpha: true, premultipliedAlpha: false }}
+        style={{ background: "transparent" }}
       >
-        <color attach="background" args={["#00000000"]} />
-        <ambientLight intensity={0.4} />
-        <directionalLight position={[5, 6, 4]} intensity={1.2} />
-        <directionalLight position={[-4, 3, -3]} intensity={0.6} color="#7dd3fc" />
-        <Environment preset="city" />
+        <ambientLight intensity={0.45} />
+        <directionalLight position={[5, 6, 4]} intensity={1.3} color="#f4d27a" />
+        <directionalLight position={[-4, 3, -3]} intensity={0.7} color="#d4af37" />
+        <pointLight position={[0, 2, 4]} intensity={0.8} color="#b8862a" />
+        <Environment preset="warehouse" />
         <Float speed={1.2} rotationIntensity={0.15} floatIntensity={0.4}>
           <ArmRig />
         </Float>
