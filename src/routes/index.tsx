@@ -2,9 +2,11 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import heroImage from "@/assets/hero-robot.jpg";
 import orRoom from "@/assets/or-room.jpg";
 import techDetail from "@/assets/tech-detail.jpg";
+import logo from "@/assets/logo.png";
 import { Button } from "@/components/ui/button";
 import { Crosshair, ShieldCheck, BrainCircuit, ArrowRight } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
+import { LogoWatermark } from "@/components/site/LogoWatermark";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -40,10 +42,10 @@ function IndexPage() {
               precision, real-time guidance, and uncompromising safety.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
-              <Button asChild size="lg" className="bg-gradient-primary text-primary-foreground shadow-glow hover:opacity-90 h-12 px-7">
+              <Button asChild size="lg" className="btn-fx bg-gradient-primary text-primary-foreground shadow-glow hover:opacity-90 h-12 px-7">
                 <Link to="/technology">Explore Our Robotics <ArrowRight className="ml-1 size-4" /></Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="h-12 px-7 bg-background/10 backdrop-blur border-primary-foreground/30 text-primary-foreground hover:bg-background/20">
+              <Button asChild size="lg" variant="outline" className="btn-fx h-12 px-7 bg-background/10 backdrop-blur border-primary-foreground/30 text-primary-foreground hover:bg-background/20">
                 <Link to="/about">About the Company</Link>
               </Button>
             </div>
@@ -60,9 +62,10 @@ function IndexPage() {
       </section>
 
       {/* Quick highlights */}
-      <section className="py-24 bg-background">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="grid lg:grid-cols-12 gap-10 items-end mb-14">
+      <section className="relative py-24 bg-background overflow-hidden">
+        <LogoWatermark src={logo} className="right-[-120px] top-1/2 -translate-y-1/2" size={520} />
+        <div className="relative max-w-7xl mx-auto px-6 lg:px-10">
+          <div className="grid lg:grid-cols-12 gap-10 items-end mb-14" data-reveal>
             <div className="lg:col-span-7">
               <div className="text-xs uppercase tracking-[0.2em] text-primary font-medium">Why Pranav Mercantile</div>
               <h2 className="mt-4 text-4xl md:text-5xl font-semibold tracking-tight">
