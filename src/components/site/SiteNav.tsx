@@ -14,13 +14,13 @@ const links = [
 export function SiteNav() {
   const [open, setOpen] = useState(false);
   return (
-    <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-xl bg-background/75 border-b border-border/60">
+    <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-xl bg-[#050710]/70 border-b border-[var(--gold)]/20 shadow-[0_8px_30px_-12px_rgba(212,175,55,0.25)]">
       <div className="max-w-7xl mx-auto px-6 lg:px-10 h-16 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3 group">
-          <img src={logo} alt="Pranav Mercantile logo" width={48} height={48} className="size-12 drop-shadow-[0_0_10px_oklch(0.68_0.18_235/0.5)] transition-transform duration-300 group-hover:scale-105" />
-          <div className="font-display font-semibold tracking-tight leading-tight hidden sm:block">
-            <div className="text-sm">PRANAV<span className="text-primary"> · </span>MERCANTILE</div>
-            <div className="text-[10px] tracking-[0.25em] text-muted-foreground uppercase">Private Limited</div>
+          <img src={logo} alt="Pranav Mercantile logo" width={48} height={48} className="size-12 logo-gold-sheen transition-transform duration-300 group-hover:scale-105" />
+          <div className="font-display font-semibold tracking-tight leading-tight hidden sm:block text-white">
+            <div className="text-sm">PRANAV<span className="text-gold"> · </span>MERCANTILE</div>
+            <div className="text-[10px] tracking-[0.25em] text-white/50 uppercase">Private Limited</div>
           </div>
         </Link>
         <nav className="hidden md:flex items-center gap-8 text-sm">
