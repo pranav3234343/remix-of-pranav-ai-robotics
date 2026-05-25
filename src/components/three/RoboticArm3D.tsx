@@ -31,10 +31,10 @@ function ArmRig() {
   });
 
   const chrome = (
-    <meshStandardMaterial color="#dbe7f2" metalness={1} roughness={0.18} envMapIntensity={1.4} />
+    <meshStandardMaterial color="#e9d59a" metalness={1} roughness={0.22} envMapIntensity={1.6} />
   );
   const accent = (
-    <meshStandardMaterial color="#3b82f6" metalness={0.6} roughness={0.25} emissive="#1d4ed8" emissiveIntensity={0.35} />
+    <meshStandardMaterial color="#d4af37" metalness={0.9} roughness={0.18} emissive="#b8862a" emissiveIntensity={0.45} />
   );
 
   return (
