@@ -140,7 +140,7 @@ function IndexPage() {
 
           <div className="grid lg:grid-cols-2 gap-10 items-center">
             <div className="zoom-reveal relative rounded-3xl overflow-hidden shadow-elegant aspect-[5/4]" data-reveal>
-              <img src={orRoom} alt="Operating room with surgical robot" className="size-full object-cover" />
+              <img src={orRoom} loading="lazy" decoding="async" alt="Operating room with surgical robot" className="size-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/30 via-transparent to-transparent" />
               <div className="absolute bottom-6 left-6 right-6 glass-panel rounded-2xl p-5 text-primary-foreground">
                 <div className="text-xs uppercase tracking-[0.25em] text-primary-glow">Live OR Telemetry</div>
@@ -171,7 +171,7 @@ function IndexPage() {
       {/* 3 · THE AI BRAIN — futuristic data-nodes */}
       <section className="relative py-32 overflow-hidden bg-gradient-deep text-primary-foreground">
         <div className="absolute inset-0 opacity-50">
-          <img src={aiMission} alt="" className="size-full object-cover opacity-30" />
+          <img src={aiMission} loading="lazy" decoding="async" alt="" className="size-full object-cover opacity-30" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,oklch(0.68_0.18_235/0.35),transparent_55%)]" />
         </div>
         {/* animated dot grid */}
@@ -289,7 +289,7 @@ function IndexPage() {
           {/* Hero image with overlay specs */}
           <div className="grid lg:grid-cols-12 gap-6">
             <div className="lg:col-span-7 zoom-reveal relative rounded-3xl overflow-hidden aspect-[16/11] shadow-elegant group" data-reveal>
-              <img src={techArm} alt="Robotic arm joint detail" className="size-full object-cover" />
+              <img src={techArm} loading="lazy" decoding="async" alt="Robotic arm joint detail" className="size-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-tr from-background/80 via-transparent to-transparent" />
               <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
                 <div>
