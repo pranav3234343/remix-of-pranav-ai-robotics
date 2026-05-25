@@ -3,8 +3,8 @@ import { useState } from "react";
 import { toast } from "sonner";
 import { Toaster } from "@/components/ui/sonner";
 import logo from "@/assets/logo.png";
-import orRoom from "@/assets/or-room.jpg";
 import { ArrowLeft, Loader2, Mail, Lock, ShieldCheck } from "lucide-react";
+import { NeuralBackground3D } from "@/components/three/NeuralBackground3D";
 
 export const Route = createFileRoute("/login")({
   head: () => ({
@@ -35,168 +35,130 @@ function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen grid lg:grid-cols-2 bg-background">
+    <div className="relative min-h-screen overflow-hidden bg-[#070b1a]">
       <Toaster />
-      {/* Left — form */}
-      <div className="relative flex flex-col px-6 sm:px-12 lg:px-16 py-10">
-        <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2.5 group">
-            <img src={logo} alt="Pranav Mercantile" width={40} height={40} className="size-10 drop-shadow-[0_0_8px_oklch(0.68_0.18_235/0.5)] transition-transform group-hover:scale-105" />
-            <div className="font-display font-semibold tracking-tight text-sm leading-tight">
-              PRANAV<span className="text-primary"> · </span>MERCANTILE
-            </div>
-          </Link>
-          <button
-            onClick={() => navigate({ to: "/" })}
-            className="text-xs text-muted-foreground hover:text-foreground inline-flex items-center gap-1.5 story-link"
-          >
-            <ArrowLeft className="size-3.5" /> Back home
-          </button>
-        </div>
+      {/* 3D animated neural background */}
+      <NeuralBackground3D className="absolute inset-0" />
+      {/* gradient overlays */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_30%,oklch(0.52_0.18_250/0.55),transparent_55%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_75%_70%,oklch(0.68_0.18_235/0.4),transparent_55%)]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/60" />
 
-        <div className="flex-1 grid place-items-center">
-          <div className="w-full max-w-md py-12">
-            <div className="text-xs uppercase tracking-[0.25em] text-primary font-medium">Surgeon & Hospital Portal</div>
-            <h1 className="mt-3 text-4xl font-semibold tracking-tight">Sign in to your console.</h1>
-            <p className="mt-3 text-muted-foreground">
-              Access procedure analytics, fleet telemetry and clinical reports.
-            </p>
+      {/* Top bar */}
+      <div className="relative z-10 flex items-center justify-between px-6 sm:px-12 lg:px-16 py-8 text-primary-foreground">
+        <Link to="/" className="flex items-center gap-3 group">
+          <img src={logo} alt="Pranav Mercantile" width={44} height={44} className="size-11 drop-shadow-[0_0_18px_oklch(0.68_0.18_235/0.7)] transition-transform group-hover:scale-105" />
+          <div className="font-display font-semibold tracking-tight text-sm leading-tight">
+            <div>PRANAV MERCANTILE</div>
+            <div className="text-[10px] text-primary-glow tracking-[0.3em] uppercase">Private Limited</div>
+          </div>
+        </Link>
+        <button
+          onClick={() => navigate({ to: "/" })}
+          className="text-xs text-primary-foreground/70 hover:text-primary-foreground inline-flex items-center gap-1.5 story-link"
+        >
+          <ArrowLeft className="size-3.5" /> Back home
+        </button>
+      </div>
 
-            {/* SSO */}
-            <div className="mt-8 space-y-3">
-              <SsoButton
-                provider="google"
-                label="Continue with Google"
-                loading={loading === "google"}
-                disabled={!!loading && loading !== "google"}
-                onClick={() => trigger("google")}
-              />
-              <SsoButton
-                provider="apple"
-                label="Continue with Apple"
-                loading={loading === "apple"}
-                disabled={!!loading && loading !== "apple"}
-                onClick={() => trigger("apple")}
-              />
-              <SsoButton
-                provider="microsoft"
-                label="Continue with Microsoft"
-                loading={loading === "microsoft"}
-                disabled={!!loading && loading !== "microsoft"}
-                onClick={() => trigger("microsoft")}
-              />
-            </div>
-
-            <div className="my-7 flex items-center gap-4 text-xs text-muted-foreground uppercase tracking-wider">
-              <div className="flex-1 h-px bg-border" />
-              or with email
-              <div className="flex-1 h-px bg-border" />
-            </div>
-
-            {/* Email form */}
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                trigger("email");
-              }}
-              className="space-y-4"
-            >
-              <label className="block">
-                <span className="text-xs uppercase tracking-wider text-muted-foreground">Email</span>
-                <div className="mt-2 relative">
-                  <Mail className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-muted-foreground" />
-                  <input
-                    type="email"
-                    required
-                    placeholder="surgeon@hospital.org"
-                    className="w-full h-12 pl-10 pr-3 rounded-md border border-input bg-background focus:outline-none focus:border-primary transition-colors"
-                  />
-                </div>
-              </label>
-              <label className="block">
-                <span className="text-xs uppercase tracking-wider text-muted-foreground">Password</span>
-                <div className="mt-2 relative">
-                  <Lock className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-muted-foreground" />
-                  <input
-                    type="password"
-                    required
-                    placeholder="••••••••"
-                    className="w-full h-12 pl-10 pr-3 rounded-md border border-input bg-background focus:outline-none focus:border-primary transition-colors"
-                  />
-                </div>
-              </label>
-              <div className="flex items-center justify-between text-sm">
-                <label className="flex items-center gap-2 text-muted-foreground">
-                  <input type="checkbox" className="rounded border-input" />
-                  Remember me
-                </label>
-                <button type="button" className="text-primary story-link">Forgot password?</button>
-              </div>
-              <button
-                type="submit"
-                disabled={!!loading}
-                className="btn-fx w-full h-12 rounded-md bg-gradient-primary text-primary-foreground font-medium shadow-elegant hover:opacity-95 disabled:opacity-70 inline-flex items-center justify-center gap-2"
-              >
-                {loading === "email" ? (
-                  <><Loader2 className="size-4 animate-spin-fast" /> Signing in…</>
-                ) : (
-                  <>Sign in</>
-                )}
-              </button>
-            </form>
-
-            <p className="mt-6 text-xs text-muted-foreground inline-flex items-center gap-1.5">
-              <ShieldCheck className="size-3.5 text-primary" /> Protected by enterprise-grade SSO & TLS 1.3.
+      {/* Glass login panel */}
+      <div className="relative z-10 min-h-[calc(100vh-200px)] grid place-items-center px-6 py-12">
+        <div className="w-full max-w-md glass-panel rounded-3xl p-8 sm:p-10 text-primary-foreground animate-float-up">
+          <div className="flex flex-col items-center text-center">
+            <img src={logo} alt="" width={64} height={64} className="size-16 drop-shadow-[0_0_24px_oklch(0.68_0.18_235/0.7)]" />
+            <div className="mt-5 text-[10px] uppercase tracking-[0.3em] text-primary-glow font-medium">Surgeon & Hospital Portal</div>
+            <h1 className="mt-3 text-3xl font-semibold tracking-tight">Welcome back.</h1>
+            <p className="mt-2 text-sm text-primary-foreground/70">
+              Sign in to access procedure analytics and fleet telemetry.
             </p>
           </div>
-        </div>
 
-        <div className="text-xs text-muted-foreground">
-          © {new Date().getFullYear()} Pranav Mercantile Private Limited
+          {/* SSO */}
+          <div className="mt-8 space-y-3">
+            <SsoButton provider="google" label="Continue with Google" loading={loading === "google"} disabled={!!loading && loading !== "google"} onClick={() => trigger("google")} />
+            <SsoButton provider="apple" label="Continue with Apple" loading={loading === "apple"} disabled={!!loading && loading !== "apple"} onClick={() => trigger("apple")} />
+            <SsoButton provider="microsoft" label="Continue with Microsoft" loading={loading === "microsoft"} disabled={!!loading && loading !== "microsoft"} onClick={() => trigger("microsoft")} />
+          </div>
+
+          <div className="my-7 flex items-center gap-4 text-[10px] text-primary-foreground/50 uppercase tracking-wider">
+            <div className="flex-1 h-px bg-white/15" />
+            or with email
+            <div className="flex-1 h-px bg-white/15" />
+          </div>
+
+          <form
+            onSubmit={(e) => { e.preventDefault(); trigger("email"); }}
+            className="space-y-4"
+          >
+            <label className="block">
+              <span className="text-[10px] uppercase tracking-[0.2em] text-primary-foreground/60">Email</span>
+              <div className="mt-2 relative">
+                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-primary-foreground/60" />
+                <input
+                  type="email"
+                  required
+                  placeholder="surgeon@hospital.org"
+                  className="w-full h-12 pl-10 pr-3 rounded-xl bg-white/5 border border-white/15 text-primary-foreground placeholder:text-primary-foreground/40 focus:outline-none focus:border-primary-glow focus:bg-white/10 transition-colors"
+                />
+              </div>
+            </label>
+            <label className="block">
+              <span className="text-[10px] uppercase tracking-[0.2em] text-primary-foreground/60">Password</span>
+              <div className="mt-2 relative">
+                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-primary-foreground/60" />
+                <input
+                  type="password"
+                  required
+                  placeholder="••••••••"
+                  className="w-full h-12 pl-10 pr-3 rounded-xl bg-white/5 border border-white/15 text-primary-foreground placeholder:text-primary-foreground/40 focus:outline-none focus:border-primary-glow focus:bg-white/10 transition-colors"
+                />
+              </div>
+            </label>
+            <div className="flex items-center justify-between text-xs">
+              <label className="flex items-center gap-2 text-primary-foreground/70">
+                <input type="checkbox" className="rounded border-white/20 bg-white/5" />
+                Remember me
+              </label>
+              <button type="button" className="text-primary-glow story-link">Forgot password?</button>
+            </div>
+            <button
+              type="submit"
+              disabled={!!loading}
+              className="btn-fx w-full h-12 rounded-xl bg-gradient-primary text-primary-foreground font-medium shadow-glow hover:opacity-95 disabled:opacity-70 inline-flex items-center justify-center gap-2"
+            >
+              {loading === "email" ? (
+                <><Loader2 className="size-4 animate-spin-fast" /> Signing in…</>
+              ) : (
+                <>Sign in</>
+              )}
+            </button>
+          </form>
+
+          <p className="mt-6 text-[11px] text-primary-foreground/60 inline-flex items-center gap-1.5 justify-center w-full">
+            <ShieldCheck className="size-3.5 text-primary-glow" /> Protected by enterprise-grade SSO & TLS 1.3.
+          </p>
         </div>
       </div>
 
-      {/* Right — visual */}
-      <div className="relative hidden lg:block bg-gradient-deep overflow-hidden">
-        <img src={orRoom} alt="" width={1920} height={1280} className="absolute inset-0 size-full object-cover opacity-50" />
-        <div className="absolute inset-0 bg-gradient-to-tr from-primary/40 via-transparent to-primary-glow/30" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_50%,oklch(0.68_0.18_235/0.25),transparent_60%)]" />
-        <img src={logo} alt="" aria-hidden width={800} height={800} className="absolute -bottom-32 -right-24 w-[700px] opacity-10" />
-        <div className="relative h-full flex items-end p-14 text-primary-foreground">
-          <div className="max-w-md">
-            <div className="text-xs uppercase tracking-[0.3em] text-primary-glow">Pranav Mercantile</div>
-            <div className="mt-4 font-display text-3xl font-semibold leading-tight">
-              "Intelligent systems will extend the steadiest hands in medicine."
-            </div>
-            <div className="mt-4 text-primary-foreground/70 text-sm">
-              — Srinivasulu Sandireddy, Founder & CEO
-            </div>
-          </div>
-        </div>
+      <div className="relative z-10 text-xs text-primary-foreground/50 text-center pb-6">
+        © {new Date().getFullYear()} Pranav Mercantile Private Limited
       </div>
     </div>
   );
 }
 
 function SsoButton({
-  provider,
-  label,
-  loading,
-  disabled,
-  onClick,
+  provider, label, loading, disabled, onClick,
 }: {
   provider: "google" | "apple" | "microsoft";
-  label: string;
-  loading: boolean;
-  disabled: boolean;
-  onClick: () => void;
+  label: string; loading: boolean; disabled: boolean; onClick: () => void;
 }) {
   return (
     <button
       type="button"
       disabled={disabled || loading}
       onClick={onClick}
-      className="btn-fx w-full h-12 px-4 rounded-md border border-input bg-card hover:bg-accent transition-colors inline-flex items-center justify-center gap-3 text-sm font-medium disabled:opacity-60"
+      className="btn-fx w-full h-12 px-4 rounded-xl border border-white/15 bg-white/5 hover:bg-white/15 transition-colors inline-flex items-center justify-center gap-3 text-sm font-medium disabled:opacity-60 text-primary-foreground"
     >
       {loading ? <Loader2 className="size-4 animate-spin-fast" /> : <ProviderIcon provider={provider} />}
       {loading ? "Connecting…" : label}
