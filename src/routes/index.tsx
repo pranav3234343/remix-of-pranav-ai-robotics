@@ -1,10 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import heroImage from "@/assets/hero-robot.jpg";
-import orRoom from "@/assets/or-room.jpg";
-import techDetail from "@/assets/tech-detail.jpg";
-import aiMission from "@/assets/ai-mission.jpg";
+import heroImage from "@/assets/hero-arm-gold.jpg";
+import orRoom from "@/assets/or-suite-gold.jpg";
+import techDetail from "@/assets/precision-tip.jpg";
+import aiMission from "@/assets/ai-brain-gold.jpg";
 import techArm from "@/assets/tech-arm.jpg";
+import patientOutcomes from "@/assets/patient-outcomes.jpg";
 import logo from "@/assets/logo.png";
 import { Button } from "@/components/ui/button";
 import {
