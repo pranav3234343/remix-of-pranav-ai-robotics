@@ -49,17 +49,17 @@ export function SiteNav() {
         </div>
       </div>
       {open && (
-        <div className="md:hidden border-t border-border bg-background animate-float-up">
+        <div className="md:hidden border-t border-[var(--gold)]/20 bg-[#050710]/95 backdrop-blur-xl animate-float-up">
           <nav className="px-6 py-4 flex flex-col gap-3">
             {links.map((l) => (
-              <Link key={l.to} to={l.to} onClick={() => setOpen(false)} className="text-foreground py-1.5">
+              <Link key={l.to} to={l.to} onClick={() => setOpen(false)} className="text-white/85 py-1.5">
                 {l.label}
               </Link>
             ))}
-            <Link to="/login" onClick={() => setOpen(false)} className="text-foreground py-1.5 border-t border-border pt-3 mt-1">
+            <Link to="/login" onClick={() => setOpen(false)} className="text-white/85 py-1.5 border-t border-[var(--gold)]/15 pt-3 mt-1">
               Sign in
             </Link>
-            <Link to="/contact" onClick={() => setOpen(false)} className="text-primary font-medium py-1.5">
+            <Link to="/contact" onClick={() => setOpen(false)} className="text-gold font-medium py-1.5">
               Request Demo →
             </Link>
           </nav>
