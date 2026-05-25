@@ -63,12 +63,12 @@ function LoginPage() {
 
       {/* Glass login panel */}
       <div className="relative z-10 min-h-[calc(100vh-200px)] grid place-items-center px-6 py-12">
-        <div className="w-full max-w-md glass-panel rounded-3xl p-8 sm:p-10 text-primary-foreground animate-float-up">
+        <div className="w-full max-w-md glass-gold rounded-3xl p-8 sm:p-10 text-white animate-float-up">
           <div className="flex flex-col items-center text-center">
-            <img src={logo} alt="" width={64} height={64} className="size-16 drop-shadow-[0_0_24px_oklch(0.68_0.18_235/0.7)]" />
-            <div className="mt-5 text-[10px] uppercase tracking-[0.3em] text-primary-glow font-medium">Surgeon & Hospital Portal</div>
-            <h1 className="mt-3 text-3xl font-semibold tracking-tight">Welcome back.</h1>
-            <p className="mt-2 text-sm text-primary-foreground/70">
+            <img src={logo} alt="" width={64} height={64} className="size-16 logo-gold-sheen" />
+            <div className="mt-5 text-[10px] uppercase tracking-[0.35em] text-gold font-medium">Surgeon & Hospital Portal</div>
+            <h1 className="mt-3 text-3xl font-semibold tracking-tight">Welcome <span className="text-gradient-gold">back.</span></h1>
+            <p className="mt-2 text-sm text-white/65">
               Sign in to access procedure analytics and fleet telemetry.
             </p>
           </div>
