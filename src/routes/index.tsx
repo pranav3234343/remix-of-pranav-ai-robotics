@@ -1,9 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import heroImage from "@/assets/hero-robot.jpg";
-import orRoom from "@/assets/or-room.jpg";
-import techDetail from "@/assets/tech-detail.jpg";
-import aiMission from "@/assets/ai-mission.jpg";
+import heroImage from "@/assets/hero-arm-gold.jpg";
+import orRoom from "@/assets/or-suite-gold.jpg";
+import patientOutcomes from "@/assets/patient-outcomes.jpg";
+import aiMission from "@/assets/ai-brain-gold.jpg";
 import techArm from "@/assets/tech-arm.jpg";
 import logo from "@/assets/logo.png";
 import { Button } from "@/components/ui/button";
@@ -57,36 +57,41 @@ function Counter({ to, suffix = "", duration = 2000 }: { to: number; suffix?: st
 function IndexPage() {
   return (
     <SiteLayout>
-      {/* 1 · HERO — full-page 3D */}
-      <section className="relative min-h-screen overflow-hidden bg-gradient-deep">
-        <div className="absolute inset-0 opacity-60">
-          <img src={heroImage} alt="" className="absolute inset-0 size-full object-cover opacity-30" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_40%,oklch(0.68_0.18_235/0.4),transparent_60%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_80%,oklch(0.52_0.18_250/0.35),transparent_55%)]" />
+      {/* 1 · HERO — 3D as background, content over the top */}
+      <section className="relative min-h-screen overflow-hidden bg-[#050710] isolate">
+        {/* Background imagery layer */}
+        <div className="absolute inset-0 z-0">
+          <img src={heroImage} alt="Gold-accented surgical robotic arm" className="absolute inset-0 size-full object-cover opacity-50" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#050710] via-[#050710]/85 to-transparent" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_75%_45%,rgba(212,175,55,0.28),transparent_60%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_15%_85%,rgba(184,134,42,0.18),transparent_55%)]" />
         </div>
 
-        {/* 3D Arm — interactive, follows mouse */}
-        <RoboticArm3D className="absolute inset-0 lg:left-1/3" />
+        {/* 3D Arm — interactive background overlay, hidden on small screens for perf */}
+        <div className="absolute inset-0 z-10 hidden lg:block pointer-events-none">
+          <RoboticArm3D className="absolute inset-y-0 right-0 w-[55%]" />
+        </div>
 
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-10 pt-32 pb-24 min-h-screen flex items-center w-full">
+        {/* Content layer */}
+        <div className="relative z-20 max-w-7xl mx-auto px-6 lg:px-10 pt-32 pb-24 min-h-screen flex items-center w-full">
           <div className="max-w-2xl animate-float-up">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-primary-glow/40 bg-white/5 backdrop-blur text-xs text-primary-foreground/90 tracking-[0.2em] uppercase">
-              <span className="size-1.5 rounded-full bg-primary-glow animate-pulse-glow" />
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass-gold text-xs text-[var(--gold-bright)] tracking-[0.25em] uppercase">
+              <span className="size-1.5 rounded-full bg-[var(--gold)] animate-pulse-glow" />
               Pranav Mercantile · Surgical AI
             </div>
-            <h1 className="mt-6 text-5xl md:text-7xl lg:text-[5.5rem] font-semibold tracking-tight text-primary-foreground leading-[1.02]">
-              The Future of <span className="bg-gradient-to-r from-primary-glow to-white bg-clip-text text-transparent">Surgical Precision.</span>
+            <h1 className="mt-7 text-5xl md:text-7xl lg:text-[5.5rem] font-semibold tracking-tight text-white leading-[1.02]">
+              The Future of <span className="text-gradient-gold">Surgical Precision.</span>
             </h1>
-            <p className="mt-7 text-lg md:text-xl text-primary-foreground/75 max-w-xl leading-relaxed">
+            <p className="mt-7 text-lg md:text-xl text-white/75 max-w-xl leading-relaxed">
               An immersive operating platform built around an AI-guided robotic arm —
               engineered for sub-millimeter accuracy, total situational awareness, and
               uncompromising patient safety.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
-              <Button asChild size="lg" className="btn-fx bg-gradient-primary text-primary-foreground shadow-glow hover:opacity-90 h-13 px-8">
+              <Button asChild size="lg" className="btn-fx bg-gradient-gold text-[#1a1407] font-semibold shadow-gold hover:opacity-95 h-13 px-8">
                 <Link to="/technology">Explore the Platform <ArrowRight className="ml-1 size-4" /></Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="btn-fx h-13 px-8 bg-white/5 backdrop-blur border-white/25 text-primary-foreground hover:bg-white/15">
+              <Button asChild size="lg" variant="outline" className="btn-fx h-13 px-8 glass-gold border-[var(--gold)]/40 text-white hover:bg-[var(--gold)]/15">
                 <Link to="/about">Our Mission</Link>
               </Button>
             </div>
@@ -97,8 +102,8 @@ function IndexPage() {
                 { v: "<8ms", l: "Loop latency" },
               ].map((s) => (
                 <div key={s.l}>
-                  <div className="font-display text-3xl text-primary-foreground font-semibold">{s.v}</div>
-                  <div className="text-xs uppercase tracking-wider text-primary-foreground/55 mt-1">{s.l}</div>
+                  <div className="font-display text-3xl text-gradient-gold font-semibold">{s.v}</div>
+                  <div className="text-xs uppercase tracking-wider text-white/55 mt-1">{s.l}</div>
                 </div>
               ))}
             </div>
@@ -106,9 +111,9 @@ function IndexPage() {
         </div>
 
         {/* scroll cue */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-primary-foreground/60 text-xs uppercase tracking-[0.3em] flex flex-col items-center gap-2">
+        <div className="absolute z-20 bottom-8 left-1/2 -translate-x-1/2 text-white/60 text-xs uppercase tracking-[0.3em] flex flex-col items-center gap-2">
           Scroll
-          <span className="block w-px h-10 bg-gradient-to-b from-primary-glow to-transparent animate-pulse" />
+          <span className="block w-px h-10 bg-gradient-to-b from-[var(--gold)] to-transparent animate-pulse" />
         </div>
       </section>
 
@@ -343,15 +348,9 @@ function IndexPage() {
 
       {/* 5 · GLOBAL IMPACT — counters + video background */}
       <section className="relative py-32 overflow-hidden bg-gradient-deep text-primary-foreground">
-        <video
-          autoPlay muted loop playsInline
-          poster={techDetail}
-          className="absolute inset-0 size-full object-cover opacity-25"
-        >
-          <source src="https://cdn.coverr.co/videos/coverr-medical-data-visualization-7411/1080p.mp4" type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-background/0 to-black/60" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_50%,oklch(0.52_0.18_250/0.35),transparent_60%)]" />
+        <img src={patientOutcomes} alt="" loading="lazy" className="absolute inset-0 size-full object-cover opacity-25" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_50%,rgba(212,175,55,0.25),transparent_60%)]" />
 
         <div className="relative max-w-7xl mx-auto px-6 lg:px-10">
           <div className="max-w-3xl" data-reveal>
