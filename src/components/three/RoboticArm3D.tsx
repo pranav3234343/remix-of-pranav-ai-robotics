@@ -111,7 +111,7 @@ function FloatingRings() {
       {[2.6, 3.1, 3.6].map((r, i) => (
         <mesh key={i} rotation={[Math.PI / 2 + i * 0.15, 0, i * 0.4]}>
           <torusGeometry args={[r, 0.005, 8, 128]} />
-          <meshBasicMaterial color="#7dd3fc" transparent opacity={0.35 - i * 0.08} />
+          <meshBasicMaterial color="#f4d27a" transparent opacity={0.4 - i * 0.1} />
         </mesh>
       ))}
     </group>
