@@ -29,21 +29,21 @@ export function SiteNav() {
               key={l.to}
               to={l.to}
               activeOptions={{ exact: true }}
-              activeProps={{ className: "text-foreground font-medium" }}
-              inactiveProps={{ className: "text-muted-foreground hover:text-foreground transition-colors story-link" }}
+              activeProps={{ className: "text-gold font-medium" }}
+              inactiveProps={{ className: "text-white/70 hover:text-white transition-colors story-link" }}
             >
               {l.label}
             </Link>
           ))}
         </nav>
         <div className="flex items-center gap-2">
-          <Button asChild size="sm" variant="ghost" className="hidden sm:inline-flex btn-fx">
+          <Button asChild size="sm" variant="ghost" className="hidden sm:inline-flex btn-fx text-white/80 hover:text-gold hover:bg-[var(--gold)]/10">
             <Link to="/login">Sign in</Link>
           </Button>
-          <Button asChild size="sm" className="btn-fx bg-gradient-primary text-primary-foreground hover:opacity-90 shadow-elegant hidden sm:inline-flex">
+          <Button asChild size="sm" className="btn-fx bg-gradient-gold text-[#1a1407] font-semibold hover:opacity-95 shadow-gold hidden sm:inline-flex">
             <Link to="/contact">Request Demo</Link>
           </Button>
-          <button onClick={() => setOpen(!open)} className="md:hidden p-2 -mr-2 text-foreground" aria-label="Menu">
+          <button onClick={() => setOpen(!open)} className="md:hidden p-2 -mr-2 text-white" aria-label="Menu">
             {open ? <X className="size-5" /> : <Menu className="size-5" />}
           </button>
         </div>
