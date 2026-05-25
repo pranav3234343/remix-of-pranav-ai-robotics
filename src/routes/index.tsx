@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import heroImage from "@/assets/hero-arm-gold.jpg";
 import orRoom from "@/assets/or-suite-gold.jpg";
-import techDetail from "@/assets/precision-tip.jpg";
+import patientOutcomes from "@/assets/patient-outcomes.jpg";
 import aiMission from "@/assets/ai-brain-gold.jpg";
 import techArm from "@/assets/tech-arm.jpg";
 import patientOutcomes from "@/assets/patient-outcomes.jpg";
