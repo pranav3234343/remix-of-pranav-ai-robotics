@@ -124,7 +124,7 @@ function LoginPage() {
             <button
               type="submit"
               disabled={!!loading}
-              className="btn-fx w-full h-12 rounded-xl bg-gradient-primary text-primary-foreground font-medium shadow-glow hover:opacity-95 disabled:opacity-70 inline-flex items-center justify-center gap-2"
+              className="btn-fx w-full h-12 rounded-xl bg-gradient-gold text-[#1a1407] font-semibold shadow-gold hover:opacity-95 disabled:opacity-70 inline-flex items-center justify-center gap-2"
             >
               {loading === "email" ? (
                 <><Loader2 className="size-4 animate-spin-fast" /> Signing in…</>
