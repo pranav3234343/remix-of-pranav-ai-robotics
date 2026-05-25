@@ -61,7 +61,7 @@ function IndexPage() {
       <section className="relative min-h-screen overflow-hidden bg-[#050710] isolate">
         {/* Background imagery layer */}
         <div className="absolute inset-0 z-0">
-          <img src={heroImage} alt="Gold-accented surgical robotic arm" className="absolute inset-0 size-full object-cover opacity-50" />
+          <img src={heroImage} alt="Gold-accented surgical robotic arm" fetchPriority="high" decoding="async" className="absolute inset-0 size-full object-cover opacity-50" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#050710] via-[#050710]/85 to-transparent" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_75%_45%,rgba(212,175,55,0.28),transparent_60%)]" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_15%_85%,rgba(184,134,42,0.18),transparent_55%)]" />
@@ -69,7 +69,9 @@ function IndexPage() {
 
         {/* 3D Arm — interactive background overlay, hidden on small screens for perf */}
         <div className="absolute inset-0 z-10 hidden lg:block pointer-events-none">
-          <RoboticArm3D className="absolute inset-y-0 right-0 w-[55%]" />
+          <Suspense fallback={null}>
+            <RoboticArm3D className="absolute inset-y-0 right-0 w-[55%]" />
+          </Suspense>
         </div>
 
         {/* Content layer */}
