@@ -5,7 +5,6 @@ import orRoom from "@/assets/or-suite-gold.jpg";
 import patientOutcomes from "@/assets/patient-outcomes.jpg";
 import aiMission from "@/assets/ai-brain-gold.jpg";
 import techArm from "@/assets/tech-arm.jpg";
-import patientOutcomes from "@/assets/patient-outcomes.jpg";
 import logo from "@/assets/logo.png";
 import { Button } from "@/components/ui/button";
 import {
