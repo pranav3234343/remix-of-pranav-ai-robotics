@@ -140,7 +140,7 @@ export function SiteFooter() {
         <div className="md:col-span-3">
           <div className="text-xs uppercase tracking-[0.25em] text-gold font-medium">Leadership</div>
           <div className="mt-5 text-sm">
-            <div className="text-white font-semibold tracking-wide">CEO: SRINIVASULU SANDIREDDY</div>
+            <div className="text-white font-semibold tracking-wide">CEO: SANDIREDDY SRINIVASULU</div>
             <div className="text-white/55 mt-1">Founder & Chief Executive Officer</div>
           </div>
           <div className="mt-6 text-xs uppercase tracking-[0.25em] text-gold font-medium">Legal</div>
