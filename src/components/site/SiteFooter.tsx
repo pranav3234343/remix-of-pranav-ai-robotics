@@ -87,8 +87,8 @@ export function SiteFooter() {
             <div className="flex items-start gap-3">
               <MapPin className="size-4 mt-0.5 text-gold shrink-0" />
               <div className="text-white/80">
-                D No 1-1478, Rudrampeta,<br />
-                Anantapur, Andhra Pradesh 515004, India
+                D NO 1-1478, Rudrampeta,<br />
+                Anantapur, Ananthapur- 515004, Andhra Pradesh
               </div>
             </div>
             <div className="flex items-center gap-3">
