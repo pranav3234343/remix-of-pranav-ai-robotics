@@ -317,7 +317,7 @@ function AboutPage() {
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-[var(--gold)]/30 shadow-gold">
               <img src={ceoImage} alt="Srinivasulu Sandireddy, Founder & CEO" loading="lazy" className="w-full h-full object-cover" />
               <div className="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-[#050710]/95 via-[#050710]/60 to-transparent">
-                <div className="text-gold font-semibold">CEO: SRINIVASULU SANDIREDDY</div>
+                <div className="text-gold font-semibold">CEO: SANDIREDDY SRINIVASULU</div>
                 <div className="text-white/65 text-sm">Founder & Chief Executive Officer</div>
               </div>
             </div>
@@ -340,7 +340,7 @@ function AboutPage() {
                 operating room, patients receive care that was previously unimaginable.
               </p>
             </div>
-            <div className="mt-8 font-display text-gold">— SRINIVASULU SANDIREDDY</div>
+            <div className="mt-8 font-display text-gold">— SANDIREDDY SRINIVASULU</div>
             <Button asChild size="lg" className="mt-10 btn-fx bg-gradient-gold text-[#1a1407] font-semibold shadow-gold hover:opacity-95 h-12 px-7">
               <Link to="/technology">Explore the Platform <ArrowRight className="ml-1 size-4" /></Link>
             </Button>
