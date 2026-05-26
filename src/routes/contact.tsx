@@ -45,8 +45,8 @@ function ContactPage() {
           <div>
             <div className="space-y-5">
               <ContactItem icon={MapPin} title="Registered Office">
-                D No 1-1478, Rudrampeta,<br />
-                Anantapur, Andhra Pradesh 515004, India
+                D NO 1-1478, Rudrampeta,<br />
+                Anantapur, Ananthapur- 515004, Andhra Pradesh
               </ContactItem>
               <ContactItem icon={Mail} title="Email"><a href="mailto:contact@pranavmercantile.co.in" className="hover:text-foreground">contact@pranavmercantile.co.in</a></ContactItem>
               <ContactItem icon={Phone} title="Phone"><a href="tel:+919712131662" className="hover:text-foreground">+91 97121 31662</a></ContactItem>
