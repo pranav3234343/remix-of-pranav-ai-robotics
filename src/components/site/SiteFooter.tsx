@@ -117,7 +117,7 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="md:col-span-2">
+        <div className="md:col-span-3">
           <div className="text-xs uppercase tracking-[0.25em] text-gold font-medium">Company</div>
           <ul className="mt-5 space-y-3 text-sm">
             <li><Link to="/" className="story-link hover:text-gold">Home</Link></li>
@@ -137,18 +137,14 @@ export function SiteFooter() {
           </ul>
         </div>
 
-        <div className="md:col-span-3">
-          <div className="text-xs uppercase tracking-[0.25em] text-gold font-medium">Leadership</div>
-          <div className="mt-5 text-sm">
-            <div className="text-white font-semibold tracking-wide">CEO: SANDIREDDY SRINIVASULU</div>
-            <div className="text-white/55 mt-1">Founder & Chief Executive Officer</div>
-          </div>
-          <div className="mt-6 text-xs uppercase tracking-[0.25em] text-gold font-medium">Legal</div>
-          <ul className="mt-3 space-y-2 text-sm">
+        <div className="md:col-span-2">
+          <div className="text-xs uppercase tracking-[0.25em] text-gold font-medium">Legal</div>
+          <ul className="mt-5 space-y-3 text-sm">
             <li><Link to="/privacy" className="story-link hover:text-gold">Privacy Policy</Link></li>
             <li><Link to="/terms" className="story-link hover:text-gold">Terms of Service</Link></li>
           </ul>
         </div>
+
       </div>
 
       <div className="relative border-t border-[var(--gold)]/15">
