@@ -35,7 +35,7 @@ function PrivacyPage() {
             { h: "3. Data Security", p: "All data is encrypted in transit (TLS 1.3) and at rest (AES-256). Role-based access, full audit logs, and continuous monitoring protect every system." },
             { h: "4. Data Retention", p: "Telemetry is retained for the lifetime of the hospital agreement. Account data may be deleted on written request to our DPO." },
             { h: "5. Your Rights", p: "You may request access, correction, or deletion of your personal data. Hospital data requests must come from an authorized administrator." },
-            { h: "6. Contact", p: "Email contact@pranavmercantile.co.in or call +91 9712131662 with privacy-related inquiries." },
+            { h: "6. Contact", p: "Email contact@pranavmercantile.tech or call +91 9712131662 with privacy-related inquiries." },
           ].map((s) => (
             <div key={s.h}>
               <h2 className="font-display text-2xl font-semibold tracking-tight text-foreground">{s.h}</h2>

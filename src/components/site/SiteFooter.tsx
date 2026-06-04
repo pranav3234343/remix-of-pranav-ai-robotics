@@ -93,8 +93,8 @@ export function SiteFooter() {
             </div>
             <div className="flex items-center gap-3">
               <Mail className="size-4 text-gold shrink-0" />
-              <a href="mailto:contact@pranavmercantile.co.in" className="hover:text-gold transition-colors">
-                contact@pranavmercantile.co.in
+              <a href="mailto:contact@pranavmercantile.tech" className="hover:text-gold transition-colors">
+                contact@pranavmercantile.tech
               </a>
             </div>
             <div className="flex items-center gap-3">
