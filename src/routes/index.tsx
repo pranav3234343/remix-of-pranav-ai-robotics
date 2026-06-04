@@ -94,6 +94,9 @@ function IndexPage() {
                 <Link to="/technology">Explore the Platform <ArrowRight className="ml-1 size-4" /></Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="btn-fx h-13 px-8 glass-gold border-[var(--gold)]/40 text-white hover:bg-[var(--gold)]/15">
+                <Link to="/pricing">View Pricing <ArrowRight className="ml-1 size-4" /></Link>
+              </Button>
+              <Button asChild size="lg" variant="ghost" className="btn-fx h-13 px-8 text-white/85 hover:text-gold hover:bg-[var(--gold)]/10">
                 <Link to="/about">Our Mission</Link>
               </Button>
             </div>

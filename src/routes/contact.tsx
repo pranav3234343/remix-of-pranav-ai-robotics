@@ -48,7 +48,7 @@ function ContactPage() {
                 D NO 1-1478, Rudrampeta,<br />
                 Anantapur, Ananthapur- 515004, Andhra Pradesh
               </ContactItem>
-              <ContactItem icon={Mail} title="Email"><a href="mailto:contact@pranavmercantile.co.in" className="hover:text-foreground">contact@pranavmercantile.co.in</a></ContactItem>
+              <ContactItem icon={Mail} title="Email"><a href="mailto:contact@pranavmercantile.tech" className="hover:text-foreground">contact@pranavmercantile.tech</a></ContactItem>
               <ContactItem icon={Phone} title="Phone"><a href="tel:+919712131662" className="hover:text-foreground">+91 97121 31662</a></ContactItem>
             </div>
 

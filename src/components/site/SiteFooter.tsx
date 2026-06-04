@@ -93,8 +93,8 @@ export function SiteFooter() {
             </div>
             <div className="flex items-center gap-3">
               <Mail className="size-4 text-gold shrink-0" />
-              <a href="mailto:contact@pranavmercantile.co.in" className="hover:text-gold transition-colors">
-                contact@pranavmercantile.co.in
+              <a href="mailto:contact@pranavmercantile.tech" className="hover:text-gold transition-colors">
+                contact@pranavmercantile.tech
               </a>
             </div>
             <div className="flex items-center gap-3">
@@ -132,7 +132,7 @@ export function SiteFooter() {
           <ul className="mt-5 space-y-3 text-sm">
             <li><Link to="/technology" className="story-link hover:text-gold">Robotics</Link></li>
             <li><Link to="/technology" className="story-link hover:text-gold">AI Co-Pilot</Link></li>
-            <li><Link to="/technology" className="story-link hover:text-gold">Surgeon Console</Link></li>
+            <li><Link to="/pricing" className="story-link hover:text-gold">Pricing</Link></li>
             <li><Link to="/login" className="story-link hover:text-gold">Hospital Login</Link></li>
           </ul>
         </div>
