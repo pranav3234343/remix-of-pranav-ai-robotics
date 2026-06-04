@@ -132,7 +132,7 @@ export function SiteFooter() {
           <ul className="mt-5 space-y-3 text-sm">
             <li><Link to="/technology" className="story-link hover:text-gold">Robotics</Link></li>
             <li><Link to="/technology" className="story-link hover:text-gold">AI Co-Pilot</Link></li>
-            <li><Link to="/technology" className="story-link hover:text-gold">Surgeon Console</Link></li>
+            <li><Link to="/pricing" className="story-link hover:text-gold">Pricing</Link></li>
             <li><Link to="/login" className="story-link hover:text-gold">Hospital Login</Link></li>
           </ul>
         </div>
