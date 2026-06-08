@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Activity, Mail, MapPin, Phone, Linkedin, Twitter, Youtube, ArrowRight } from "lucide-react";
+import { Activity, ArrowRight } from "lucide-react";
 import logo from "@/assets/logo.png";
 import { useState } from "react";
 import { toast } from "sonner";
@@ -84,18 +84,6 @@ export function SiteFooter() {
           </p>
 
 
-          <div className="mt-7 flex items-center gap-3">
-            {[Linkedin, Twitter, Youtube].map((Icon, i) => (
-              <a
-                key={i}
-                href="#"
-                aria-label="Social"
-                className="btn-fx size-10 rounded-full grid place-items-center border border-[var(--gold)]/25 bg-white/5 hover:bg-[var(--gold)]/20 hover:border-[var(--gold)]/60 transition-colors"
-              >
-                <Icon className="size-4 text-gold" />
-              </a>
-            ))}
-          </div>
         </div>
 
         <div className="md:col-span-3">
@@ -128,38 +116,6 @@ export function SiteFooter() {
 
       </div>
 
-      {/* Global offices */}
-      <div className="relative border-t border-[var(--gold)]/15">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 py-12">
-          <div className="text-xs uppercase tracking-[0.3em] text-gold font-medium">Global Offices</div>
-          <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6 text-sm">
-            {[
-              { flag: "🇮🇳", city: "Anantapur, India", label: "HQ", addr: "D NO 1-1478, Rudrampeta, Anantapur 515004, AP", phone: "+91 97121 31662" },
-              { flag: "🇯🇴", city: "Amman, Jordan", label: "Middle East HQ", addr: "Ghazi Commercial Complex, Wasfi Al Tal St 80, Amman 11190", phone: "+962 79 753 4063" },
-              { flag: "🇺🇸", city: "San Francisco, USA", label: "Americas HQ", addr: "535 Mission Street, 14th Fl, SF, CA 94105", phone: "+1 415 555 0142" },
-              { flag: "🇨🇦", city: "Toronto, Canada", label: "Canada Office", addr: "100 King Street West, Suite 5700, Toronto, ON", phone: "+1 416 555 0188" },
-              { flag: "🇳🇵", city: "Kathmandu, Nepal", label: "Nepal R&D", addr: "Naxal, Bhagawati Marg, Kathmandu 44600", phone: "+977 1 4419 220" },
-              { flag: "🇸🇬", city: "Singapore", label: "APAC Office", addr: "1 Raffles Place, Tower 2, #20-61, Singapore 048616", phone: "+65 6812 4031" },
-            ].map((o) => (
-              <div key={o.city} className="rounded-lg border border-[var(--gold)]/15 bg-white/[0.02] p-4">
-                <div className="flex items-center gap-2 text-white">
-                  <span aria-hidden className="text-lg">{o.flag}</span>
-                  <span className="font-medium">{o.city}</span>
-                </div>
-                <div className="text-[10px] uppercase tracking-[0.25em] text-gold mt-1">{o.label}</div>
-                <div className="mt-2 text-white/65 text-xs leading-relaxed flex items-start gap-2">
-                  <MapPin className="size-3.5 mt-0.5 text-gold shrink-0" />
-                  <span>{o.addr}</span>
-                </div>
-                <div className="mt-1.5 text-xs flex items-center gap-2">
-                  <Phone className="size-3.5 text-gold" />
-                  <a href={`tel:${o.phone.replace(/\s/g, "")}`} className="text-white/75 hover:text-gold">{o.phone}</a>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
 
       <div className="relative border-t border-[var(--gold)]/15">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 py-6 flex flex-wrap items-center justify-between gap-3 text-xs text-white/55">
