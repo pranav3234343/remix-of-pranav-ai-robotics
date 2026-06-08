@@ -44,7 +44,7 @@ function ContactPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-14">
           <div>
             <div className="space-y-5">
-              <ContactItem icon={MapPin} title="Registered Office">
+              <ContactItem icon={MapPin} title="Registered Office (HQ — India)">
                 D NO 1-1478, Rudrampeta,<br />
                 Anantapur, Ananthapur- 515004, Andhra Pradesh
               </ContactItem>
@@ -94,6 +94,48 @@ function ContactPage() {
               {sending ? "Sending…" : <>Send Inquiry <ArrowRight className="ml-1 size-4" /></>}
             </Button>
           </form>
+        </div>
+      </section>
+
+      <section className="py-20 bg-muted/30 border-t border-border">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10">
+          <div className="text-xs uppercase tracking-[0.2em] text-primary font-medium">Global Presence</div>
+          <h2 className="mt-3 font-display text-3xl md:text-4xl font-semibold tracking-tight max-w-2xl">
+            Our offices around the world.
+          </h2>
+          <p className="mt-3 text-muted-foreground max-w-2xl">
+            Engineering, clinical and partnership teams across five regions — supporting hospitals 24/7.
+          </p>
+
+          <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {OFFICES.map((o) => (
+              <div key={o.city} className="bg-card border border-border rounded-2xl overflow-hidden shadow-card flex flex-col">
+                <div className="aspect-[16/10] bg-muted">
+                  <iframe
+                    title={`${o.city} office map`}
+                    src={`https://www.google.com/maps?q=${encodeURIComponent(o.query)}&output=embed`}
+                    className="w-full h-full border-0"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="p-6 flex-1 flex flex-col">
+                  <div className="flex items-center gap-2">
+                    <span className="text-2xl" aria-hidden>{o.flag}</span>
+                    <div className="font-display font-semibold text-lg">{o.city}, {o.country}</div>
+                  </div>
+                  <div className="text-xs uppercase tracking-wider text-primary mt-1">{o.label}</div>
+                  <div className="mt-4 text-sm text-muted-foreground leading-relaxed flex items-start gap-2">
+                    <MapPin className="size-4 mt-0.5 shrink-0 text-primary" />
+                    <span>{o.address}</span>
+                  </div>
+                  <div className="mt-3 text-sm flex items-center gap-2">
+                    <Phone className="size-4 text-primary" />
+                    <a href={`tel:${o.phone.replace(/\s/g, "")}`} className="hover:text-foreground">{o.phone}</a>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </SiteLayout>
