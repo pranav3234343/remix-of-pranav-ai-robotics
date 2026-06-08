@@ -83,25 +83,6 @@ export function SiteFooter() {
             and the world. Built clinical-grade, from the ground up.
           </p>
 
-          <div className="mt-7 space-y-3 text-sm">
-            <div className="flex items-start gap-3">
-              <MapPin className="size-4 mt-0.5 text-gold shrink-0" />
-              <div className="text-white/80">
-                D NO 1-1478, Rudrampeta,<br />
-                Anantapur, Ananthapur- 515004, Andhra Pradesh
-              </div>
-            </div>
-            <div className="flex items-center gap-3">
-              <Mail className="size-4 text-gold shrink-0" />
-              <a href="mailto:contact@pranavmercantile.tech" className="hover:text-gold transition-colors">
-                contact@pranavmercantile.tech
-              </a>
-            </div>
-            <div className="flex items-center gap-3">
-              <Phone className="size-4 text-gold shrink-0" />
-              <a href="tel:+919712131662" className="hover:text-gold transition-colors">+91 97121 31662</a>
-            </div>
-          </div>
 
           <div className="mt-7 flex items-center gap-3">
             {[Linkedin, Twitter, Youtube].map((Icon, i) => (
