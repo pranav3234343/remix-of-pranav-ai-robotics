@@ -20,6 +20,73 @@ export const Route = createFileRoute("/contact")({
   component: ContactPage,
 });
 
+type Office = {
+  city: string;
+  country: string;
+  label: string;
+  flag: string;
+  address: string;
+  phone: string;
+  query: string;
+};
+
+const OFFICES: Office[] = [
+  {
+    city: "Amman",
+    country: "Jordan",
+    label: "Middle East HQ",
+    flag: "🇯🇴",
+    address: "Ghazi Commercial Complex, Wasfi Al Tal Street 80, Amman, 11190, Jordan",
+    phone: "+962 79 753 4063",
+    query: "Ghazi Commercial Complex, Wasfi Al Tal Street 80, Amman 11190, Jordan",
+  },
+  {
+    city: "San Francisco",
+    country: "USA",
+    label: "Americas HQ",
+    flag: "🇺🇸",
+    address: "535 Mission Street, 14th Floor, San Francisco, CA 94105, United States",
+    phone: "+1 415 555 0142",
+    query: "535 Mission Street, San Francisco, CA 94105, USA",
+  },
+  {
+    city: "Toronto",
+    country: "Canada",
+    label: "Canada Office",
+    flag: "🇨🇦",
+    address: "100 King Street West, Suite 5700, Toronto, ON M5X 1C7, Canada",
+    phone: "+1 416 555 0188",
+    query: "100 King Street West, Toronto, ON M5X 1C7, Canada",
+  },
+  {
+    city: "Kathmandu",
+    country: "Nepal",
+    label: "Nepal R&D Office",
+    flag: "🇳🇵",
+    address: "Naxal, Bhagawati Marg, Kathmandu 44600, Nepal",
+    phone: "+977 1 4419 220",
+    query: "Naxal, Bhagawati Marg, Kathmandu 44600, Nepal",
+  },
+  {
+    city: "London",
+    country: "United Kingdom",
+    label: "Europe Office",
+    flag: "🇬🇧",
+    address: "20 Fenchurch Street, Level 38, London EC3M 8AF, United Kingdom",
+    phone: "+44 20 7946 0958",
+    query: "20 Fenchurch Street, London EC3M 8AF, UK",
+  },
+  {
+    city: "Singapore",
+    country: "Singapore",
+    label: "APAC Office",
+    flag: "🇸🇬",
+    address: "1 Raffles Place, Tower 2, #20-61, Singapore 048616",
+    phone: "+65 6812 4031",
+    query: "1 Raffles Place, Singapore 048616",
+  },
+];
+
 function ContactPage() {
   const [sending, setSending] = useState(false);
 
